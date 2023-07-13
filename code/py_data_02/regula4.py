@@ -20,14 +20,14 @@ for tag in tags:
 
     
 html2 = '''
-<label for="dog-names">Choose a dog name:</label>
-<select name="dog-names" id="dog-names">
-<option value="rigatoni">Rigatoni</option>
-<option value="dave">Dave</option>
-<option value="pumpernickel">Pumpernickel</option>
-<option value="reeses">Reeses</option>
-</select>
-'''
+        <label for="dog-names">Choose a dog name:</label>
+        <select name="dog-names" id="dog-names">
+        <option value="rigatoni">Rigatoni</option>
+        <option value="dave">Dave</option>
+        <option value="pumpernickel">Pumpernickel</option>
+        <option value="reeses">Reeses</option>
+        </select>
+        '''
 
 text = re.findall(r'<option value="(.*?)">(.*?)</option>', html2)
 
