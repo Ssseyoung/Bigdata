@@ -15,7 +15,7 @@ URL = 'https://serieson.naver.com/v3/movie'
 
 response = requests.get(URL)
 
-# print('응답코드 : ', response.status_code)
+print('응답코드 : ', response.status_code)
 if response.status_code == 200:
     print(response.text)
 else:
