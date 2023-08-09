@@ -1,6 +1,7 @@
 import json     # 파이썬 표준모듈
 import tensorflow as tf
 from keras.preprocessing.text import Tokenizer
+from keras.utils import pad_sequences
 
 with open('data/sarcasm.json', 'r') as f:  # 'data/sarcasm.json' 파일을 읽기 모드로 열고 f에 할당
     datas = json.load(f)  # f에서 데이터를 읽어와서 datas에 할당
@@ -21,3 +22,9 @@ myToken = Tokenizer(oov_token='<OOV>')  # Tokenizer 객체 생성
 myToken.fit_on_texts(sentences)  # 문장들을 토큰화하여 토큰 인덱스를 생성
 word = myToken.word_index  # 단어와 인덱스를 매핑한 딕셔너리 반환
 print('총단어수 : ', len(word))
+
+# 시퀀스 만들기
+seqs = myToken.texts_to_sequences(sentences)
+seqs_pad = pad_sequences(seqs, padding='post')
+print(seqs_pad[0:5])
+print(seqs_pad.shape)
